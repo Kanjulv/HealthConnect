@@ -7,7 +7,7 @@ const Listings = require("../models/listing.js"); //Requring the model from the 
 const multer = require("multer");
 const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
-const Enrollment = require("../models/Enrollment.js");
+const Enrollment = require("../models/enrollment.js");
 
 
 //Defining a middleware to check for the validation of listing schema from server side
