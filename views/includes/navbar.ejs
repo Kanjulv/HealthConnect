@@ -1,0 +1,57 @@
+<style>
+  .btn-search{
+    background-color: #156669;
+    color: white;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .btn-search:hover{
+    border-color: #156669;
+    color: #156669;
+  }
+
+  .btn-search i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .search-inp{
+    border-radius: 25px;
+    width: 30rem;
+    font-size: 0.8;
+  }
+
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fa fa-medkit" aria-hidden="true"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/HealthConnect"><b>Home</b></a>
+          <a class="nav-link" href="/HealthConnect/explore"><b>Explore</b></a>
+          <a class="nav-link" href="#"><b>Claim Your Insurance</b></a>
+          <a class="nav-link" href="#"><b>Premium Calculator</b></a>
+      </div>
+      
+      <!-- SearchBox -->
+      <form class="d-flex navbar-nav ms-auto needs-validation" novalidate role="search" method="GET" action="/HealthConnect/explore/search">
+        <input class="form-control me-2 search-inp" type="search" name="title" placeholder="Search Insurance" aria-label="Search">
+        <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i>Search</button>
+      </form>
+
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser){ %>
+                  <a class="nav-link btn btn-dark add-btn"  href="/login" style="margin-right: 10px; color: white !important;">Login</a>
+        <a class="nav-link btn btn-dark add-btn" href="/signup" style="margin-right: 10px; color: white !important;">Signup</a>
+        <% } %>
+        <% if(currUser){ %>
+        <a class="nav-link btn btn-dark add-btn" href="/logout" style="margin-right: 10px; color: white !important;"> Logout</a>
+        <% } %>
+    </div>
+    </div>
+  </nav>

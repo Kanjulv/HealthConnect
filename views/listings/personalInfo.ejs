@@ -1,0 +1,106 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+  <br>
+    <form method="POST" action="/HealthConnect/enroll" novalidate class="needs-validation" enctype="multipart/form-data">
+        <!-- Personal Information -->
+        <H3>Personal Information</H3>
+        <br>
+        <div class="mb-3">
+            <label for="fullName" class="form-label"><b>Full Name</b></label>
+            <input name="fullName" type="text" placeholder="Enter your full name" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Full name is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="dateOfBirth" class="form-label"><b>Date of Birth</b></label>
+            <input name="dateOfBirth" type="date" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Date of birth is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="gender" class="form-label"><b>Gender</b></label>
+            <select name="gender" class="form-select" required>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Gender is required.</div>
+        </div>
+        <hr>
+        <br>
+        <h3>Contact Information</h3>
+        <br>
+        <!-- Contact Information -->
+        <div class="mb-3">
+            <label for="email" class="form-label"><b>Email</b></label>
+            <input name="email" type="email" placeholder="Enter your email" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Email is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label"><b>Phone Number</b></label>
+            <input name="phoneNumber" type="tel" placeholder="Enter your phone number" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Phone number is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="address" class="form-label"><b>Address</b></label>
+            <input name="address" type="text" placeholder="Enter your address" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Address is required.</div>
+        </div>
+        <br>
+        <hr>
+        <h3>Document Verfication</h3>
+        <br>
+        <!-- Document Verification -->
+        <div class="mb-3">
+            <label for="ageProof" class="form-label"><b>Age Proof Document</b></label>
+            <input name="ageProof" type="file" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Age proof document is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="addressProof" class="form-label"><b>Address Proof Document</b></label>
+            <input name="addressProof" type="file" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Address proof document is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="identityProof" class="form-label"><b>Identity Proof Document</b></label>
+            <input name="identityProof" type="file" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Identity proof document is required.</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="passportPhoto" class="form-label"><b>Passport Size Photo</b></label>
+            <input name="passportPhoto" type="file" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Passport size photo is required.</div>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="medicalReports" class="form-label"><b>Medical Reports</b></label>
+            <input name="medicalReports" type="file" class="form-control">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Medical reports should be uploaded if required.</div>
+        </div>
+        
+        <!-- Submit button -->
+        <br>
+        <button class="btn btn-dark add-btn" type="submit">Submit</button>
+    </form>
+    <br> <br>
+</body>
+</html>

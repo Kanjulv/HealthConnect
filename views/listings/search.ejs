@@ -1,0 +1,26 @@
+<%layout("/layouts/boilerplate") %>
+        <br>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <% listings.forEach(listing => { %>
+            <div class="col">
+              <div class="card h-100 card3">
+                <a href="/HealthConnect/<%=listing._id%>">
+                  <img src="https://i.pinimg.com/564x/61/4d/27/614d27792b39d0d4f7c2cac6cbccefa2.jpg" class="card-img-top" alt="img">
+              </a>
+              
+                <div class="card-body">
+                  <h5 class="card-title"><%= listing.title %></h5>
+                  <p class="card-text"><%= listing.description %></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-body-secondary" >
+                    <a class="nav-link" href="/HealthConnect/enroll"><b>Enroll Now</b></a>
+                  </small>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        <br>
+        <br>
+        
