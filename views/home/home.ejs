@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="/public/css/home.css" />
     <title>HealthConnect-Your Easy Enrollment Portal</title>
   </head>
+  <style>
+
+    .navbar-name{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+  </style>
   <body>
 
     <!-- Flash for success -->
@@ -44,23 +52,39 @@
 <% } %>
 
 
-    <header>
-      <nav class="section__container nav__container">
-        <a class="navbar-brand" href="/HealthConnect"><i class="fa fa-medkit" aria-hidden="true"></i></a>
-        <div class="nav__logo">HealthConnect</div>
-        <ul class="nav__links">
-          <li class="link"><a href="/HealthConnect">Home</a></li>
-          <li class="link"><a href="/HealthConnect/explore">Explore</a></li>
-          <li class="link"><a href="#">Claim</a></li>
-          <li class="link"><a href="#">Premium</a></li>
-          <li class="link"><a href="#">Blogs</a></li>
-          <li class="link"><a href="#">Contact</a></li>
 
             <% if(!currUser){ %>
+              <header>
+                <nav class="section__container nav__container">
+                  <div class="navbar-name">
+                    <a class="navbar-brand" href="/HealthConnect"><i class="fa fa-medkit" aria-hidden="true"></i></a>
+                    <div class="nav__logo">HealthConnect</div>
+                  </div>
+                  <ul class="nav__links">
+                    <li class="link"><a href="/HealthConnect">Home</a></li>
+                    <li class="link"><a href="/HealthConnect/explore">Explore</a></li>
+                    <li class="link"><a href="/HealthConnect/claim">Claim</a></li> 
+                    <li class="link"><a href="/HealthConnect/premium">Premium</a></li>
+                    <li class="link"><a href="#">Blogs</a></li>
+                    <li class="link"><a href="#">Contact</a></li>
                       <a class="nav-link btn btn-dark add-btn"  href="/login" style="margin-right: 10px; color: white !important;">Login</a>
             <a class="nav-link btn btn-dark add-btn" href="/signup" style="margin-right: 10px; color: white !important;">Signup</a>
             <% } %>
             <% if(currUser){ %>
+              <header>
+                <nav class="section__container nav__container">
+
+                  <div class="navbar-name">
+                    <a class="navbar-brand" href="/HealthConnect"><i class="fa fa-medkit" aria-hidden="true"></i></a>
+                    <div class="nav__logo">HealthConnect</div>
+                  </div>
+                    <ul class="nav__links">
+                    <li class="link"><a href="/HealthConnect">Home</a></li>
+                    <li class="link"><a href="/HealthConnect/explore">Explore</a></li>
+                    <li class="link"><a href="/HealthConnect/claim">Claim</a></li> 
+                    <li class="link"><a href="/HealthConnect/premium">Premium</a></li>
+                    <li class="link"><a href="#">Blogs</a></li>
+                    <li class="link"><a href="#">Contact</a></li>
             <a class="nav-link btn btn-dark add-btn" href="/logout" style="margin-right: 10px; color: white !important;"> Logout</a>
             <% } %>
 
@@ -72,7 +96,7 @@
           <p>
             Welcome to HealthConnect, where we simplify health insurance – seamlessly, digitally, and transparently.
           </p>
-          <button class="btn">See Services</button>
+          <button class="btn form__btn">See Services</button>
         </div>
         <div class="header__form">
           <form>

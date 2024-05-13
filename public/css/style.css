@@ -19,7 +19,7 @@ body {
 
 .navbar{
     height: 5rem;
-    background-color: white;
+    background-color: #77B0AA;
 }
 
 .fa-medkit{
@@ -28,7 +28,7 @@ body {
 }
 
 .nav-link{
-    color: #222222 !important;
+    color: white !important;
 }
 
 /* Footer */

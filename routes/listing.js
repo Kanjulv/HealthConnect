@@ -23,12 +23,15 @@ const validateListing = (req, res, next) => {
 
 //Middleware for authorization
 function ensureAuthenticated(req, res, next) {
+  console.log(req.isAuthenticated());
   if (!req.isAuthenticated()) {
+    req.session.redirectUrl = req.originalUrl;
     req.flash("error", "You must be logged in first :(");
-    return res.redirect("/HealthConnect/explore");
+    return res.redirect("/login");
   }
   next();
 }
+
 
 //Enrollment get route
 router.get("/enroll", ensureAuthenticated, wrapAsync(async(req, res) => {
@@ -100,6 +103,16 @@ router.get("/explore/search", wrapAsync(async (req, res) => {
   res.render("listings/search.ejs", { listings });
 }));
 
+router.get("/claim", wrapAsync (async (req, res) => {
+  res.render("listings/underConstruction.ejs");
+}));
+
+router.get("/premium", wrapAsync (async (req, res) => {
+  res.render("listings/underConstruction.ejs");
+}));
+
+
+
 //Read Route: To show details of indivisual listings
 router.get(
   "/:id",
@@ -117,3 +130,4 @@ router.get("/",wrapAsync (async (req, res) => {
 
 
 module.exports = router;
+module.exports = ensureAuthenticated;
