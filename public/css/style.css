@@ -28,9 +28,12 @@ body {
 }
 
 .nav-link{
-    color: white !important;
+    color: black;
 }
 
+.white-nav{
+    color: white !important;
+}
 /* Footer */
 
 .f-info-links{

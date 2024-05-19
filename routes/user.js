@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync.js");
 const passport = require("passport");
+const { saveRedirectUrl } = require("../middleware.js");
 
 //Route to Logout user
 router.get("/logout", (req, res) => {
@@ -54,14 +55,33 @@ credentials. If the authentication fails, it will redirect the user back to the 
 display a flash message with the error. */
 router.post(
   "/login",
+  saveRedirectUrl,
   passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
   }),
-  async(req, res) => {
+  async (req, res) => {
     req.flash("success", "Welcome back to HealthConnect!");
-    res.redirect("./HealthConnect");
+
+    // Check if a redirect URL is saved
+    let redirectUrl = res.locals.redirectUrl;
+
+    // If no redirect URL is found, determine origin and set default redirect
+    if (!redirectUrl) {
+        const referrer = req.headers.referer; // Get referrer header
+        if (referrer && referrer.includes("/HealthConnect")) {
+          // User was likely on the home page
+          redirectUrl = "/HealthConnect";
+        } else {
+          // User was likely on another page (assume explore for now)
+          redirectUrl = "/HealthConnect/explore";
+        }
+    }
+
+    console.log(redirectUrl);
+    res.redirect(redirectUrl);
   }
 );
+
 
 module.exports = router;

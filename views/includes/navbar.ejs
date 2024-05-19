@@ -32,6 +32,8 @@
       margin-right: 10rem; /* Moves the navbar links to the right */
     }
 
+    
+
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -50,22 +52,22 @@
 
       <div class="navbar-nav ms-auto">
         <% if(!currUser){ %>
-          <a class="nav-link" href="/HealthConnect">Home</a>
-          <a class="nav-link" href="/HealthConnect/explore">Explore</a>
-          <a class="nav-link" href="/HealthConnect/claim">Claim</a>
-          <a class="nav-link" href="/HealthConnect/premium">Premium</a>
-          <a class="nav-link" href="#">Blog</a>
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link white-nav" href="/HealthConnect">Home</a>
+          <a class="nav-link white-nav" href="/HealthConnect/explore">Explore</a>
+          <a class="nav-link white-nav" href="/HealthConnect/claim">Claim</a>
+          <a class="nav-link white-nav" href="/HealthConnect/premium">Premium</a>
+          <a class="nav-link white-nav" href="#">Blog</a>
+          <a class="nav-link white-nav" href="#">Contact</a>
           <a class="nav-link btn btn-dark add-btn"  href="/login" style="margin-right: 10px; color: white !important;">Login</a>
           <a class="nav-link btn btn-dark add-btn" href="/signup" style="margin-right: 10px; color: white !important;">Signup</a>
         <% } %>
         <% if(currUser){ %>
-          <a class="nav-link" href="/HealthConnect">Home</a>
-          <a class="nav-link" href="/HealthConnect/explore">Explore</a>
-          <a class="nav-link" href="/HealthConnect/claim">Claim</a>
-          <a class="nav-link" href="/HealthConnect/premium">Premium</a>
-          <a class="nav-link" href="#">Blog</a>
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link white-nav" href="/HealthConnect">Home</a>
+          <a class="nav-link white-nav" href="/HealthConnect/explore">Explore</a>
+          <a class="nav-link white-nav" href="/HealthConnect/claim">Claim</a>
+          <a class="nav-link white-nav" href="/HealthConnect/premium">Premium</a>
+          <a class="nav-link white-nav" href="#">Blog</a>
+          <a class="nav-link white-nav" href="#">Contact</a>
           <a class="nav-link btn btn-dark add-btn" href="/logout" style="margin-right: 10px; color: white !important;"> Logout</a>
         <% } %>
     </div>

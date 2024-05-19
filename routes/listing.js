@@ -8,6 +8,7 @@ const multer = require("multer");
 const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
 const Enrollment = require("../models/enrollment.js");
+const { ensureAuthenticated } = require("../middleware.js");
 
 
 //Defining a middleware to check for the validation of listing schema from server side
@@ -20,17 +21,6 @@ const validateListing = (req, res, next) => {
     next();
   }
 };
-
-//Middleware for authorization
-function ensureAuthenticated(req, res, next) {
-  console.log(req.isAuthenticated());
-  if (!req.isAuthenticated()) {
-    req.session.redirectUrl = req.originalUrl;
-    req.flash("error", "You must be logged in first :(");
-    return res.redirect("/login");
-  }
-  next();
-}
 
 
 //Enrollment get route
@@ -112,7 +102,6 @@ router.get("/premium", wrapAsync (async (req, res) => {
 }));
 
 
-
 //Read Route: To show details of indivisual listings
 router.get(
   "/:id",
@@ -123,11 +112,9 @@ router.get(
   })
 );
 
-
 router.get("/",wrapAsync (async (req, res) => {
   res.render("home/home.ejs");
 }));
 
 
 module.exports = router;
-module.exports = ensureAuthenticated;
